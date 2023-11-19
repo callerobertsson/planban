@@ -33,16 +33,16 @@
         {
           "Name": "Documentation",
           "Description": "update readme"
-        },
-        {
-          "Name": "Create Github repo",
-          "Description": "callerobertsson/planban"
         }
       ]
     },
     {
       "Name": "Done",
       "Tasks": [
+        {
+          "Name": "Create Github repo",
+          "Description": "callerobertsson/planban"
+        },
         {
           "Name": "Move stacks",
           "Description": "left, right"

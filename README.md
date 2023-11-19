@@ -2,6 +2,8 @@
 
 A simple command line interface Kanban program.
 
+![Example Board - Planban Tasks](./planban.png)
+
 ## Synopsis
 
     planban [<path_to_planban_json_file>]
@@ -19,7 +21,7 @@ the moment.
 
 ## Usage
 
-Planban is based on (Wyrm)[https://github.com/callerobertsson/wyrm], a
+Planban is based on [Wyrm](https://github.com/callerobertsson/wyrm), a
 single key command executor, so it's very fast to use, no long and
 tedious command names to enter, only one key press most of the time.
 
