@@ -16,8 +16,12 @@ file doesn't exist it will be created and filled with the default board.
 
 ## Installation
 
-Clone this repo and build using Golang. I have only tested on Linux at
-the moment.
+Should be as simple as
+
+    go install github.com/callerobertsson/planban
+
+but no guarantees. You can also clone this repo and build using `go
+build`.
 
 ## Usage
 
