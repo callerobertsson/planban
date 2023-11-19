@@ -1,0 +1,33 @@
+{
+  "Name": "Planban Board",
+  "Information": "Board information text",
+  "Stacks": [
+    {
+      "Name": "Backlog",
+      "Tasks": [
+        {
+          "Name": "Task Example",
+          "Description": "A description"
+        }
+      ]
+    },
+    {
+      "Name": "Doing",
+      "Tasks": [
+        {
+          "Name": "Test",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "Name": "Done",
+      "Tasks": []
+    }
+  ],
+  "Config": {
+    "NoColors": false,
+    "HideBoardInformation": false,
+    "HideTaskDescriptions": false
+  }
+}
