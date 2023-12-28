@@ -12,6 +12,10 @@
         {
           "Name": "Wrap text",
           "Description": "In stacks if too wide."
+        },
+        {
+          "Name": "Add search command",
+          "Description": "Maybe?"
         }
       ],
       "ShowMax": 0
@@ -21,7 +25,7 @@
       "Tasks": [
         {
           "Name": "Export data",
-          "Description": "which formats?\nMaybe print to file as utf-8\nMaybe CSV, how?\nMaybe Markdown?\nMaybe compatible format to other Kanban tools?"
+          "Description": "which formats? csv? markdown?\ncompatible format to other Kanban tools?"
         },
         {
           "Name": "Print board flag",
@@ -33,6 +37,10 @@
     {
       "Name": "Done",
       "Tasks": [
+        {
+          "Name": "Add help option",
+          "Description": "-h"
+        },
         {
           "Name": "Fix bug",
           "Description": "Add and delete on empty\nstack causes boom."
@@ -82,7 +90,7 @@
           "Description": "add, edit, delete"
         }
       ],
-      "ShowMax": 0
+      "ShowMax": 8
     },
     {
       "Name": "Obsoleted",
