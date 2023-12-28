@@ -19,8 +19,9 @@ type Config struct {
 
 // Stack defines a Planban Stack of Tasks
 type Stack struct {
-	Name  string
-	Tasks []Task
+	Name    string
+	Tasks   []Task
+	ShowMax int
 }
 
 // Task defines the contents of a Task

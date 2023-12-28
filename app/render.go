@@ -49,7 +49,7 @@ func (pb *Planban) renderConfig() {
 	fmt.Printf("  [E]dit in environment editor %s\n", yesno(pb.board.Config.UseEnvEditor))
 }
 
-func (pb *Planban) renderBoard() {
+func (pb *Planban) RenderBoard() {
 
 	enableColor(!pb.board.Config.NoColors)
 
@@ -89,6 +89,21 @@ func (pb *Planban) renderBoard() {
 	}
 	tbl.Append(stacks)
 
+	// Footer: number of tasks
+	footer := []string{}
+	for _, s := range pb.board.Stacks {
+		showMax := s.ShowMax
+		numTasks := len(s.Tasks)
+
+		text := gray(fmt.Sprintf("%d tasks", numTasks))
+		if showMax != 0 && showMax < numTasks {
+			text = yellow(fmt.Sprintf("%d of %d tasks", showMax, numTasks))
+		}
+
+		footer = append(footer, text)
+	}
+	tbl.SetFooter(footer)
+
 	tbl.Render()
 
 	fmt.Println("")
@@ -100,11 +115,17 @@ func (pb *Planban) stackTasks(index int, ts []Task) string {
 	applyDefaultTableSettings(tbl)
 
 	for i, t := range ts {
+		showMax := pb.board.Stacks[index].ShowMax
+		if showMax != 0 && i == showMax {
+			break
+		}
+
 		name := green(t.Name)
 		if index == pb.stackIndex && i == pb.taskIndex {
 			name = yellow("> " + t.Name + " <")
 		}
 		tbl.Append([]string{name})
+
 		if !pb.board.Config.HideTaskDescriptions && t.Description != "" {
 			tbl.Append([]string{gray(t.Description)})
 		}
@@ -112,7 +133,7 @@ func (pb *Planban) stackTasks(index int, ts []Task) string {
 
 	tbl.Render()
 
-	return tblStr.String()
+	return strings.TrimRight(tblStr.String(), " \n")
 }
 
 func applyDefaultTableSettings(tbl *tablewriter.Table) {

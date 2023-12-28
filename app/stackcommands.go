@@ -3,6 +3,8 @@ package app
 
 import (
 	"fmt"
+	"math"
+	"strconv"
 
 	"github.com/callerobertsson/wyrm"
 )
@@ -77,7 +79,7 @@ func (pb *Planban) addStackCommand() error {
 		return err
 	}
 
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -100,7 +102,7 @@ func (pb *Planban) deleteStackCommand() error {
 		pb.stackIndex = len(pb.board.Stacks) - 1
 	}
 
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -119,7 +121,14 @@ func (pb *Planban) editStackCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].Name = name
 
-	pb.renderBoard()
+	showMax, err := wyrm.InputInt("Max tasks to show > ", strconv.Itoa(pb.board.Stacks[pb.stackIndex].ShowMax), math.MaxInt)
+	if err != nil {
+		return err
+	}
+
+	pb.board.Stacks[pb.stackIndex].ShowMax = showMax
+
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 

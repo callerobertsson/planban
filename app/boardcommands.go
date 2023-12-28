@@ -43,6 +43,6 @@ func (pb *Planban) editBoardCommand() error {
 
 	pb.board.Information = info
 
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }

@@ -6,38 +6,36 @@
       "Name": "Backlog",
       "Tasks": [
         {
-          "Name": "Improve rendering",
-          "Description": "not perfect yet"
-        },
-        {
-          "Name": "Export Markdown",
-          "Description": "other formats?"
-        },
-        {
-          "Name": "Add custom prompter",
-          "Description": "supported by wyrm"
-        },
-        {
           "Name": "Precompiled versions",
           "Description": "mac, linux, windows"
         }
-      ]
+      ],
+      "ShowMax": 0
     },
     {
       "Name": "Doing",
       "Tasks": [
         {
-          "Name": "Handle long stacks",
-          "Description": "configurable"
+          "Name": "Export data",
+          "Description": "which formats?\nMaybe print to file as utf-8\nMaybe CSV, how?\nMaybe Markdown?\nMaybe compatible format to other Kanban tools?"
         }
-      ]
+      ],
+      "ShowMax": 0
     },
     {
       "Name": "Done",
       "Tasks": [
         {
+          "Name": "Improve rendering",
+          "Description": "Add footer and minor fixes."
+        },
+        {
+          "Name": "Handle long stacks",
+          "Description": "configurable"
+        },
+        {
           "Name": "Use $EDITOR",
-          "Description": "for descriptions, fallback? Done!\n"
+          "Description": "for descriptions, fallback?"
         },
         {
           "Name": "Documentation",
@@ -71,7 +69,18 @@
           "Name": "Task commands",
           "Description": "add, edit, delete"
         }
-      ]
+      ],
+      "ShowMax": 5
+    },
+    {
+      "Name": "Obsoleted",
+      "Tasks": [
+        {
+          "Name": "Add custom prompter",
+          "Description": "supported by wyrm"
+        }
+      ],
+      "ShowMax": 0
     }
   ],
   "Config": {

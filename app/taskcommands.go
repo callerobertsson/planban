@@ -16,7 +16,7 @@ func (pb *Planban) addTaskCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].Tasks = append(pb.board.Stacks[pb.stackIndex].Tasks, Task{t.Name, t.Description})
 
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -29,7 +29,7 @@ func (pb *Planban) editTaskCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex] = t
 
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -49,7 +49,7 @@ func (pb *Planban) deleteTaskCommand() error {
 	}
 
 	pb.adjustTaskIndex()
-	pb.renderBoard()
+	pb.RenderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -64,7 +64,7 @@ func (pb Planban) editTask(t Task) (Task, error) {
 	}
 
 	if pb.board.Config.UseEnvEditor {
-		desc, err := editInEnvEditor("planban-task-description", t.Description)
+		desc, err := editInEnvEditor("planban-task-description-", t.Description)
 		if err != nil {
 			return t, err
 		}

@@ -63,7 +63,7 @@ func New(f string) (*Planban, error) {
 // Run starts the interactive Planban session
 func (pb *Planban) Run() error {
 
-	pb.renderBoard()
+	pb.RenderBoard()
 
 	pb.wyrm.Run()
 

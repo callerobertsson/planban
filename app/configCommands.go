@@ -58,7 +58,7 @@ func (pb *Planban) toggleNoColorCommand() error {
 	pb.board.Config.NoColors = !pb.board.Config.NoColors
 
 	err := pb.saveBoardFile()
-	pb.renderBoard()
+	pb.RenderBoard()
 	return err
 }
 
@@ -67,7 +67,7 @@ func (pb *Planban) toggleBoardDescriptionCommand() error {
 	pb.board.Config.HideBoardInformation = !pb.board.Config.HideBoardInformation
 
 	err := pb.saveBoardFile()
-	pb.renderBoard()
+	pb.RenderBoard()
 	return err
 }
 
@@ -76,7 +76,7 @@ func (pb *Planban) toggleTaskDescriptionsCommand() error {
 	pb.board.Config.HideTaskDescriptions = !pb.board.Config.HideTaskDescriptions
 
 	err := pb.saveBoardFile()
-	pb.renderBoard()
+	pb.RenderBoard()
 	return err
 }
 
@@ -85,6 +85,6 @@ func (pb *Planban) toggleUseEnvEditor() error {
 	pb.board.Config.UseEnvEditor = !pb.board.Config.UseEnvEditor
 
 	err := pb.saveBoardFile()
-	pb.renderBoard()
+	pb.RenderBoard()
 	return err
 }
