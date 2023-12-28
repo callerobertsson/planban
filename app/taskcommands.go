@@ -22,6 +22,10 @@ func (pb *Planban) addTaskCommand() error {
 
 func (pb *Planban) editTaskCommand() error {
 
+	if len(pb.board.Stacks[pb.stackIndex].Tasks) < 1 {
+		return fmt.Errorf("no task to edit")
+	}
+
 	t, err := pb.editTask(pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex])
 	if err != nil {
 		return err
@@ -34,6 +38,10 @@ func (pb *Planban) editTaskCommand() error {
 }
 
 func (pb *Planban) deleteTaskCommand() error {
+
+	if len(pb.board.Stacks[pb.stackIndex].Tasks) < 1 {
+		return fmt.Errorf("no task to delete")
+	}
 
 	name := pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex].Name
 	prompt := fmt.Sprintf("WARNING: Do you want to delete the %q task? [yes] > ", name)

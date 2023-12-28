@@ -34,6 +34,10 @@
       "Name": "Done",
       "Tasks": [
         {
+          "Name": "Fix bug",
+          "Description": "Add and delete on empty\nstack causes boom."
+        },
+        {
           "Name": "Improve rendering",
           "Description": "Add footer and minor fixes."
         },
@@ -78,7 +82,7 @@
           "Description": "add, edit, delete"
         }
       ],
-      "ShowMax": 5
+      "ShowMax": 0
     },
     {
       "Name": "Obsoleted",
