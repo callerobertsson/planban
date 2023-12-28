@@ -32,6 +32,12 @@ func (pb *Planban) configCommands() map[rune]*wyrm.Command {
 			Description: "Toggle task descriptions",
 			Function:    pb.toggleTaskDescriptionsCommand,
 		},
+		'e': {
+			Sort:        nextSort(),
+			Title:       "editor",
+			Description: "Toggle edit in environment editor",
+			Function:    pb.toggleUseEnvEditor,
+		},
 	}
 }
 
@@ -68,6 +74,15 @@ func (pb *Planban) toggleBoardDescriptionCommand() error {
 func (pb *Planban) toggleTaskDescriptionsCommand() error {
 
 	pb.board.Config.HideTaskDescriptions = !pb.board.Config.HideTaskDescriptions
+
+	err := pb.saveBoardFile()
+	pb.renderBoard()
+	return err
+}
+
+func (pb *Planban) toggleUseEnvEditor() error {
+
+	pb.board.Config.UseEnvEditor = !pb.board.Config.UseEnvEditor
 
 	err := pb.saveBoardFile()
 	pb.renderBoard()

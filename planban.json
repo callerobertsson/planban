@@ -1,13 +1,25 @@
 {
-  "Name": "Planban Board",
-  "Information": "Board information text",
+  "Name": "Planban Development Board",
+  "Information": "Current develoment status for the Planban project.",
   "Stacks": [
     {
       "Name": "Backlog",
       "Tasks": [
         {
-          "Name": "Task Example",
-          "Description": "A description"
+          "Name": "Improve rendering",
+          "Description": "not perfect yet"
+        },
+        {
+          "Name": "Export Markdown",
+          "Description": "other formats?"
+        },
+        {
+          "Name": "Add custom prompter",
+          "Description": "supported by wyrm"
+        },
+        {
+          "Name": "Precompiled versions",
+          "Description": "mac, linux, windows"
         }
       ]
     },
@@ -15,19 +27,57 @@
       "Name": "Doing",
       "Tasks": [
         {
-          "Name": "Test",
-          "Description": ""
+          "Name": "Handle long stacks",
+          "Description": "configurable"
         }
       ]
     },
     {
       "Name": "Done",
-      "Tasks": []
+      "Tasks": [
+        {
+          "Name": "Use $EDITOR",
+          "Description": "for descriptions, fallback? Done!\n"
+        },
+        {
+          "Name": "Documentation",
+          "Description": "update readme"
+        },
+        {
+          "Name": "Create Github repo",
+          "Description": "callerobertsson/planban"
+        },
+        {
+          "Name": "Move stacks",
+          "Description": "left, right"
+        },
+        {
+          "Name": "Move tasks",
+          "Description": "up, down, left, right"
+        },
+        {
+          "Name": "Config commands",
+          "Description": "toggle basic settings"
+        },
+        {
+          "Name": "Board commands",
+          "Description": "edit name \u0026 descr"
+        },
+        {
+          "Name": "Stack commands",
+          "Description": "add, edit, delete"
+        },
+        {
+          "Name": "Task commands",
+          "Description": "add, edit, delete"
+        }
+      ]
     }
   ],
   "Config": {
     "NoColors": false,
     "HideBoardInformation": false,
-    "HideTaskDescriptions": false
+    "HideTaskDescriptions": false,
+    "UseEnvEditor": true
   }
 }

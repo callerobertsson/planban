@@ -9,7 +9,7 @@ import (
 
 func (pb *Planban) addTaskCommand() error {
 
-	t, err := editTask(Task{})
+	t, err := pb.editTask(Task{})
 	if err != nil {
 		return err
 	}
@@ -22,7 +22,7 @@ func (pb *Planban) addTaskCommand() error {
 
 func (pb *Planban) editTaskCommand() error {
 
-	t, err := editTask(pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex])
+	t, err := pb.editTask(pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex])
 	if err != nil {
 		return err
 	}
@@ -53,7 +53,7 @@ func (pb *Planban) deleteTaskCommand() error {
 	return pb.saveBoardFile()
 }
 
-func editTask(t Task) (Task, error) {
+func (pb Planban) editTask(t Task) (Task, error) {
 
 	name, err := wyrm.InputText("Task Name > ", t.Name)
 	switch {
@@ -63,15 +63,19 @@ func editTask(t Task) (Task, error) {
 		return t, err
 	}
 
-	// TODO: Use $EDITOR for input of description
-	desc := ""
-	if true { // TODO: maybe !pb.Config.FastAddTask
-		desc, err = wyrm.InputText("Task Description > ", t.Description)
-		switch {
-		case err == wyrm.ErrEmpty: // Description is not mandatory
-		case err != nil:
+	if pb.board.Config.UseEnvEditor {
+		desc, err := editInEnvEditor("planban-task-description", t.Description)
+		if err != nil {
 			return t, err
 		}
+		return Task{name, desc}, nil
+	}
+
+	desc, err := wyrm.InputText("Task Description > ", t.Description)
+	switch {
+	case err == wyrm.ErrEmpty: // Description is not mandatory
+	case err != nil:
+		return t, err
 	}
 
 	return Task{name, desc}, nil

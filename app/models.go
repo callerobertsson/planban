@@ -14,6 +14,7 @@ type Config struct {
 	NoColors             bool
 	HideBoardInformation bool
 	HideTaskDescriptions bool
+	UseEnvEditor         bool
 }
 
 // Stack defines a Planban Stack of Tasks

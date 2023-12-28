@@ -70,7 +70,7 @@ Global command keys:
    [newline] - print help on the current commands
 ```
 
-The file `devboard.json` contains a Kanban with development tasks and
+The file `planban.json` contains a Kanban with development tasks and
 shows the current status of Planban development.
 
 ## Example usage

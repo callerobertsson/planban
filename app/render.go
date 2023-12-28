@@ -43,9 +43,10 @@ func (pb *Planban) renderConfig() {
 		return "no"
 	}
 
-	fmt.Printf("  No [C]olors               %s\n", yesno(pb.board.Config.NoColors))
-	fmt.Printf("  Hide Board [I]nformation  %s\n", yesno(pb.board.Config.HideBoardInformation))
-	fmt.Printf("  Hide Task [D]escriptions  %s\n", yesno(pb.board.Config.HideTaskDescriptions))
+	fmt.Printf("  No [C]olors                  %s\n", yesno(pb.board.Config.NoColors))
+	fmt.Printf("  Hide Board [I]nformation     %s\n", yesno(pb.board.Config.HideBoardInformation))
+	fmt.Printf("  Hide Task [D]escriptions     %s\n", yesno(pb.board.Config.HideTaskDescriptions))
+	fmt.Printf("  [E]dit in environment editor %s\n", yesno(pb.board.Config.UseEnvEditor))
 }
 
 func (pb *Planban) renderBoard() {

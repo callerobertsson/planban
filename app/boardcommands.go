@@ -21,14 +21,24 @@ func (pb *Planban) editBoardCommand() error {
 
 	pb.board.Name = name
 
-	// TODO: use $EDITOR instead
-	info, err := wyrm.InputText("Board Info > ", pb.board.Information)
-	switch {
-	case err == wyrm.ErrAbort:
-		return nil
-	case err == wyrm.ErrEmpty:
-	case err != nil:
-		return err
+	info := pb.board.Information
+
+	if pb.board.Config.UseEnvEditor {
+		maybeInfo, err := editInEnvEditor("planban-board-info-", pb.board.Information)
+		if err != nil {
+			return err
+		}
+		info = maybeInfo
+	} else {
+		maybeInfo, err := wyrm.InputText("Board Info > ", pb.board.Information)
+		switch {
+		case err == wyrm.ErrAbort:
+			return nil
+		case err == wyrm.ErrEmpty:
+		case err != nil:
+			return err
+		}
+		info = maybeInfo
 	}
 
 	pb.board.Information = info
