@@ -16,7 +16,7 @@ func (pb *Planban) addTaskCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].Tasks = append(pb.board.Stacks[pb.stackIndex].Tasks, Task{t.Name, t.Description})
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -29,7 +29,7 @@ func (pb *Planban) editTaskCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].Tasks[pb.taskIndex] = t
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -49,7 +49,7 @@ func (pb *Planban) deleteTaskCommand() error {
 	}
 
 	pb.adjustTaskIndex()
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 

@@ -6,7 +6,7 @@ import "fmt"
 func (pb *Planban) moveStackRightCommand() error {
 
 	if pb.stackIndex > len(pb.board.Stacks)-2 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -24,14 +24,14 @@ func (pb *Planban) moveStackRightCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
 func (pb *Planban) moveStackLeftCommand() error {
 
 	if pb.stackIndex < 1 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -50,14 +50,14 @@ func (pb *Planban) moveStackLeftCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
 func (pb *Planban) moveTaskUpCommand() error {
 
 	if pb.taskIndex < 1 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -75,14 +75,14 @@ func (pb *Planban) moveTaskUpCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
 func (pb *Planban) moveTaskDownCommand() error {
 
 	if pb.taskIndex > len(pb.board.Stacks[pb.stackIndex].Tasks)-2 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -100,14 +100,14 @@ func (pb *Planban) moveTaskDownCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
 func (pb *Planban) moveTaskLeftCommand() error {
 
 	if pb.stackIndex < 1 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -126,14 +126,14 @@ func (pb *Planban) moveTaskLeftCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
 func (pb *Planban) moveTaskRightCommand() error {
 
 	if pb.stackIndex > len(pb.board.Stacks)-2 {
-		pb.RenderBoard()
+		pb.renderBoard()
 		return nil
 	}
 
@@ -152,6 +152,6 @@ func (pb *Planban) moveTaskRightCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }

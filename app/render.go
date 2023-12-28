@@ -49,7 +49,16 @@ func (pb *Planban) renderConfig() {
 	fmt.Printf("  [E]dit in environment editor %s\n", yesno(pb.board.Config.UseEnvEditor))
 }
 
-func (pb *Planban) RenderBoard() {
+// PrintBoard prints the Planban board in monochrome color
+func (pb *Planban) PrintBoard() {
+	pb.board.Config.NoColors = true
+	// TODO: Need better distinction between Task title and description when printing without color.
+	// TODO: Remove indicators for active Stack and Task (> xxx <)
+	// TODO: Show all tasks even if ShowMax is set
+	pb.renderBoard()
+}
+
+func (pb *Planban) renderBoard() {
 
 	enableColor(!pb.board.Config.NoColors)
 

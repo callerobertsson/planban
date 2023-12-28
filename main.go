@@ -2,6 +2,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
@@ -10,9 +11,15 @@ import (
 
 var pbFile = "planban.json" // default board file name
 
+var printFlag = false
+
 func init() {
-	if len(os.Args) > 1 {
-		pbFile = os.Args[1]
+	flag.BoolVar(&printFlag, "p", false, "print board and exit")
+	flag.Parse()
+
+	file := flag.Arg(0)
+	if file != "" {
+		pbFile = file
 	}
 }
 
@@ -20,6 +27,11 @@ func main() {
 	pb, err := app.New(pbFile)
 	if err != nil {
 		fail(err)
+	}
+
+	if printFlag {
+		pb.PrintBoard()
+		os.Exit(0)
 	}
 
 	if err := pb.Run(); err != nil {

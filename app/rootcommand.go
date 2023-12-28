@@ -113,7 +113,7 @@ func (pb *Planban) getRootCommand() *wyrm.Command {
 				Sort:        nextSort(),
 				Title:       "refresh",
 				Description: "Redraw the board",
-				Function:    func() error { pb.RenderBoard(); return nil },
+				Function:    func() error { pb.renderBoard(); return nil },
 			},
 		},
 	}

@@ -79,7 +79,7 @@ func (pb *Planban) addStackCommand() error {
 		return err
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -102,7 +102,7 @@ func (pb *Planban) deleteStackCommand() error {
 		pb.stackIndex = len(pb.board.Stacks) - 1
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 
@@ -128,7 +128,7 @@ func (pb *Planban) editStackCommand() error {
 
 	pb.board.Stacks[pb.stackIndex].ShowMax = showMax
 
-	pb.RenderBoard()
+	pb.renderBoard()
 	return pb.saveBoardFile()
 }
 

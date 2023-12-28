@@ -7,7 +7,7 @@ func (pb *Planban) selectTaskAboveCommand() error {
 		pb.taskIndex--
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 
 	return nil
 }
@@ -20,7 +20,7 @@ func (pb *Planban) selectTaskBelowCommand() error {
 		pb.taskIndex++
 	}
 
-	pb.RenderBoard()
+	pb.renderBoard()
 
 	return nil
 }
@@ -36,7 +36,7 @@ func (pb *Planban) selectNextStackCommand() error {
 
 	pb.adjustTaskIndex()
 
-	pb.RenderBoard()
+	pb.renderBoard()
 
 	return nil
 }
@@ -49,7 +49,7 @@ func (pb *Planban) selectPrevStackCommand() error {
 
 	pb.adjustTaskIndex()
 
-	pb.RenderBoard()
+	pb.renderBoard()
 
 	return nil
 }

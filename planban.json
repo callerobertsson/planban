@@ -8,6 +8,10 @@
         {
           "Name": "Precompiled versions",
           "Description": "mac, linux, windows"
+        },
+        {
+          "Name": "Wrap text",
+          "Description": "In stacks if too wide."
         }
       ],
       "ShowMax": 0
@@ -18,6 +22,10 @@
         {
           "Name": "Export data",
           "Description": "which formats?\nMaybe print to file as utf-8\nMaybe CSV, how?\nMaybe Markdown?\nMaybe compatible format to other Kanban tools?"
+        },
+        {
+          "Name": "Print board flag",
+          "Description": "Add -p option on commandline \nto print board without colors"
         }
       ],
       "ShowMax": 0
