@@ -2,6 +2,8 @@
 
 A simple command line interface Kanban program.
 
+NOTE: Moved to https://codeberg.org/robcon/planban
+
 ![Example Board - Planban Tasks](./planban.png)
 
 ## Synopsis
